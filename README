@@ -1,1 +1,26 @@
-SevenSeg is Arduino pde for capturing microwave's seven segment display output
+uWave
+-----
+Contact: seas.upenn.edu emails:
+Kevin Conley <kevincon@seas>
+Varun Sampath <vsampath@seas>
+Ben Shyong <bshyong@seas>
+Teddy Zhang <thezhang@seas>
+
+uWave is a texting, Twitter-enabled microwave. See http://uwaved.com
+for demo videos and information on how it works.
+
+Code:
+See the uWaveArduino PDE for the uWave code. Be sure to edit the 
+web_settings_template.h file for your own settings. To implement your own
+server, there are two HTTP GET requests you need to be able to handle
+from the Arduino. One is the start time:
+
+GET /arduino/start?time=%d HTTP/1.0
+
+where %d is an integer representing seconds. The other is the finish
+notification:
+
+GET /arduino/finish HTTP/1.0
+
+This code was implemented on an Arduino Duemilanove using the arduino-0023
+SDK.
